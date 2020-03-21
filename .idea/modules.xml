@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AdvancedJavaProgrammingWithJavaFX/AdvancedJavaProgrammingWithJavaFX.iml" filepath="$PROJECT_DIR$/AdvancedJavaProgrammingWithJavaFX/AdvancedJavaProgrammingWithJavaFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaCourses.iml" filepath="$PROJECT_DIR$/JavaCourses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aJavaProgrammingMasterclassForJavaDevelopers/aJavaProgrammingMasterclassForJavaDevelopers.iml" filepath="$PROJECT_DIR$/aJavaProgrammingMasterclassForJavaDevelopers/aJavaProgrammingMasterclassForJavaDevelopers.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+.button {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+#button_three{
+    -fx-background-color: blue;
+    -fx-text-fill: white;
+}
+
+.label {
+    -fx-background-color: grey;
+    -fx-text-fill: white;
+  /*  -fx-rotate: 90;*/
+}
