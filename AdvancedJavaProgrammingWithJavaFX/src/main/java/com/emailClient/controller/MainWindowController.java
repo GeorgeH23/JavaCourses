@@ -57,10 +57,19 @@ public class MainWindowController extends BaseController implements Initializabl
         setUpContextMenus();
     }
 
+    @FXML
+    void composeMessageOption(ActionEvent event) {
+        viewFactory.showComposeMessageWindow();
+    }
 
     @FXML
     void optionsAction(ActionEvent event) {
         viewFactory.showOptionsWindow();
+    }
+
+    @FXML
+    void addAccountAction(ActionEvent event) {
+        viewFactory.showLoginWindow();
     }
 
     private void setUpEmailsTreeView() {
