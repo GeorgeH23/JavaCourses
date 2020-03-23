@@ -5,7 +5,6 @@ import com.emailClient.controller.EmailLoginResult;
 import com.emailClient.model.EmailAccount;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-
 import javax.mail.*;
 
 public class LoginService extends Service<EmailLoginResult> {
@@ -28,6 +27,7 @@ public class LoginService extends Service<EmailLoginResult> {
 
         try {
             Session session = Session.getInstance(emailAccount.getProperties(), authenticator);
+            emailAccount.setSession(session);
             Store store = session.getStore("imaps");
             store.connect(emailAccount.getProperties().getProperty("incomingHost"), emailAccount.getAddress(), emailAccount.getPassword());
             emailAccount.setStore(store);

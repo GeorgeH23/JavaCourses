@@ -29,7 +29,7 @@
     </Button>
 
     <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="This is a label"
-    textFill="blue" WrapText="true">
+    textFill="blue">
         <font>
             <Font name="Arial italic" size="12"/>
         </font>

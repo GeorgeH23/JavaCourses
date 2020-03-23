@@ -2,11 +2,10 @@ package com.emailClient.controller.services;
 
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-
 import javax.mail.Folder;
 import java.util.List;
 
-public class FolderUpdaterService extends Service {
+public class FolderUpdaterService extends Service<Void> {
 
     private List<Folder> folderList;
 
@@ -15,10 +14,10 @@ public class FolderUpdaterService extends Service {
     }
 
     @Override
-    protected Task createTask() {
-        return new Task() {
+    protected Task<Void> createTask() {
+        return new Task<>() {
             @Override
-            protected Object call() throws Exception {
+            protected Void call() throws Exception {
                 for (;;) {
                     try {
                         Thread.sleep(5000);

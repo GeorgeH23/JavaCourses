@@ -4,15 +4,13 @@ import com.emailClient.model.EmailMessage;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.scene.web.WebEngine;
-
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
-import javax.mail.search.BodyTerm;
 import java.io.IOException;
 
-public class MessageRendererService extends Service {
+public class MessageRendererService extends Service<Void> {
 
     private EmailMessage emailMessage;
     private WebEngine webEngine;
@@ -39,10 +37,10 @@ public class MessageRendererService extends Service {
     }
 
     @Override
-    protected Task createTask() {
-        return new Task() {
+    protected Task<Void> createTask() {
+        return new Task<>() {
             @Override
-            protected Object call() throws Exception {
+            protected Void call() throws Exception {
                 try {
                     loadMessage();
                 } catch (Exception e) {

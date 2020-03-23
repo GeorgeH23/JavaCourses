@@ -14,7 +14,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
-
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;

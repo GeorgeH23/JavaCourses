@@ -12,7 +12,7 @@ public class EmailTreeItem<String> extends TreeItem<String> {
 
     private String name;
     private ObservableList<EmailMessage> emailMessages;
-    private int unredMessagesCount;
+    private int unreadMessagesCount;
 
     public EmailTreeItem(String name) {
         super(name);
@@ -49,18 +49,18 @@ public class EmailTreeItem<String> extends TreeItem<String> {
     }
 
     public void incrementMessagesCount() {
-        unredMessagesCount++;
+        unreadMessagesCount++;
         updateName();
     }
 
     public void decrementMessagesCount() {
-        unredMessagesCount--;
+        unreadMessagesCount--;
         updateName();
     }
 
     private void updateName() {
-        if (unredMessagesCount > 0) {
-            this.setValue((String) (name + "(" + unredMessagesCount + ")"));
+        if (unreadMessagesCount > 0) {
+            this.setValue((String) (name + "(" + unreadMessagesCount + ")"));
         } else {
             this.setValue(name);
         }

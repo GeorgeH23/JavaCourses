@@ -3,7 +3,6 @@ package com.emailClient.controller.services;
 import com.emailClient.model.EmailTreeItem;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -26,7 +25,7 @@ public class FetchFoldersService extends Service<Void> {
 
     @Override
     protected Task<Void> createTask() {
-        return new Task<Void>() {
+        return new Task<>() {
             @Override
             protected Void call() throws Exception {
                 fetchFolders();
