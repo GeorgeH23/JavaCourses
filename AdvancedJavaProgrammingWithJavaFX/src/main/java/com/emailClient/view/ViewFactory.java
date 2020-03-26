@@ -15,7 +15,7 @@ public class ViewFactory {
     private EmailManager emailManager;
     private List<Stage> activeStages;
     //View options handling
-    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+    private ColorTheme colorTheme = ColorTheme.LIGHT;
     private FontSize fontSize = FontSize.MEDIUM;
     private boolean mainViewInitialized = false;
 
@@ -72,6 +72,7 @@ public class ViewFactory {
         stage.setScene(scene);
         stage.show();
         activeStages.add(stage);
+        updateStyles();
     }
 
     public void updateStyles() {

@@ -41,6 +41,15 @@ public class ComposeMessageWindowController extends BaseController implements In
 
     @FXML
     void sendButtonAction(ActionEvent event) {
+        if (recipientTextField.getText().equals("")) {
+            errorLabel.setText("No recipient selected!");
+            return;
+        }
+        if (subjectTextField.getText().equals("")) {
+            errorLabel.setText("No subject for email!");
+            return;
+        }
+        errorLabel.setText("");
         EmailSenderService emailSenderService = new EmailSenderService(
                 emailAccountChoiceBox.getValue(),
                 subjectTextField.getText(),
