@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AdvancedJavaProgrammingWithJavaFX/AdvancedJavaProgrammingWithJavaFX.iml" filepath="$PROJECT_DIR$/AdvancedJavaProgrammingWithJavaFX/AdvancedJavaProgrammingWithJavaFX.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaCourses.iml" filepath="$PROJECT_DIR$/JavaCourses.iml" />
       <module fileurl="file://$PROJECT_DIR$/aJavaProgrammingMasterclassForJavaDevelopers/aJavaProgrammingMasterclassForJavaDevelopers.iml" filepath="$PROJECT_DIR$/aJavaProgrammingMasterclassForJavaDevelopers/aJavaProgrammingMasterclassForJavaDevelopers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bFaceDetectionApplication/bFaceDetectionApplication.iml" filepath="$PROJECT_DIR$/bFaceDetectionApplication/bFaceDetectionApplication.iml" />
     </modules>
   </component>
 </project>

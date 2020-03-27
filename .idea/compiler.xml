@@ -6,13 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="aJavaProgrammingMasterclassForJavaDevelopers" />
         <module name="AdvancedJavaProgrammingWithJavaFX" />
+        <module name="aJavaProgrammingMasterclassForJavaDevelopers" />
+        <module name="bFaceDetectionApplication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AdvancedJavaProgrammingWithJavaFX" target="11" />
       <module name="aJavaProgrammingMasterclassForJavaDevelopers" target="11" />
+      <module name="bFaceDetectionApplication" target="11" />
       <module name="JavaCourses" target="11" />
     </bytecodeTargetLevel>
   </component>

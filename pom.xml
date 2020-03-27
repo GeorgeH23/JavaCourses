@@ -14,6 +14,7 @@
     <modules>
         <module>AdvancedJavaProgrammingWithJavaFX</module>
         <module>aJavaProgrammingMasterclassForJavaDevelopers</module>
+        <module>bFaceDetectionApplication</module>
     </modules>
 
     <build>
