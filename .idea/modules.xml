@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/cAdvancedJavaProgrammingWithJavaFX/AdvancedJavaProgrammingWithJavaFX.iml" filepath="$PROJECT_DIR$/cAdvancedJavaProgrammingWithJavaFX/AdvancedJavaProgrammingWithJavaFX.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaCourses.iml" filepath="$PROJECT_DIR$/JavaCourses.iml" />
       <module fileurl="file://$PROJECT_DIR$/aJavaProgrammingMasterclassForJavaDevelopers/aJavaProgrammingMasterclassForJavaDevelopers.iml" filepath="$PROJECT_DIR$/aJavaProgrammingMasterclassForJavaDevelopers/aJavaProgrammingMasterclassForJavaDevelopers.iml" />
       <module fileurl="file://$PROJECT_DIR$/bFaceDetectionApplication/bFaceDetectionApplication.iml" filepath="$PROJECT_DIR$/bFaceDetectionApplication/bFaceDetectionApplication.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cAdvancedJavaProgrammingWithJavaFX/cAdvancedJavaProgrammingWithJavaFX.iml" filepath="$PROJECT_DIR$/cAdvancedJavaProgrammingWithJavaFX/cAdvancedJavaProgrammingWithJavaFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dPracticalDataStructuresAndAlgorithmsInJava/dPracticalDataStructuresAndAlgorithmsInJava.iml" filepath="$PROJECT_DIR$/dPracticalDataStructuresAndAlgorithmsInJava/dPracticalDataStructuresAndAlgorithmsInJava.iml" />
     </modules>
   </component>
 </project>
