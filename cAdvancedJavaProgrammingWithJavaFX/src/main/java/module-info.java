@@ -1,4 +1,4 @@
-module AdvancedJavaProgrammingWithJavaFX {
+module cAdvancedJavaProgrammingWithJavaFX {
 
     requires javafx.fxml;
     requires javafx.base;

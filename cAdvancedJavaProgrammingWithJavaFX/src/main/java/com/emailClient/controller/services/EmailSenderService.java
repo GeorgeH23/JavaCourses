@@ -4,7 +4,6 @@ import com.emailClient.controller.EmailSendingResult;
 import com.emailClient.model.EmailAccount;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-
 import javax.mail.*;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
