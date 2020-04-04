@@ -6,6 +6,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+        /**
+         * SELECTION SORT TIME COMPLEXITY: -worst case scenario is O(n^2)
+         *                                 -best case scenario is Ω(n^2)
+         *                                 -average case scenario is θ(n^2)
+         * */
+
         selectionSort(new int[]{1,65,3,21,69,234,0,6,31,12,9});
     }
 
