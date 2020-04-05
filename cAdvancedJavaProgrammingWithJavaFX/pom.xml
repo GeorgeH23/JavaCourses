@@ -12,7 +12,7 @@
     </parent>
 
     <!-- child info -->
-    <artifactId>AdvancedJavaProgrammingWithJavaFX</artifactId>
+    <artifactId>cAdvancedJavaProgrammingWithJavaFX</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
