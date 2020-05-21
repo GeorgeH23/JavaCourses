@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FolderUpdaterService extends Service<Void> {
 
-    private List<Folder> folderList;
+    private final List<Folder> folderList;
 
     public FolderUpdaterService(List<Folder> folderList) {
         this.folderList = folderList;
@@ -22,8 +22,10 @@ public class FolderUpdaterService extends Service<Void> {
                     try {
                         Thread.sleep(5000);
                         for (Folder folder : folderList) {
-                            if ((folder.getType() != Folder.HOLDS_FOLDERS) && (folder.isOpen())) {
-                                folder.getMessageCount();
+                            synchronized (folderList) {
+                                if ((folder.getType() != Folder.HOLDS_FOLDERS) && (folder.isOpen())) {
+                                    folder.getMessageCount();
+                                }
                             }
                         }
                     } catch (Exception e) {
