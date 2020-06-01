@@ -40,6 +40,7 @@ public class MainWindowController extends BaseController implements Initializabl
     private MessageRendererService messageRendererService;
     private MenuItem markUnreadMenuItem = new MenuItem("Mark as unread");
     private MenuItem deleteMessageMenuItem = new MenuItem("Delete message");
+    private MenuItem showMessageMenuItem = new MenuItem("View Details");
 
     public MainWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
         super(emailManager, viewFactory, fxmlName);
@@ -83,7 +84,7 @@ public class MainWindowController extends BaseController implements Initializabl
         sizeColumn.setCellValueFactory(new PropertyValueFactory<EmailMessage, SizeInteger>("size"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<EmailMessage, Date>("date"));
 
-        emailsTableView.setContextMenu(new ContextMenu(markUnreadMenuItem, deleteMessageMenuItem));
+        emailsTableView.setContextMenu(new ContextMenu(markUnreadMenuItem, deleteMessageMenuItem, showMessageMenuItem));
     }
 
     private void setUpFolderSelection() {
@@ -134,6 +135,9 @@ public class MainWindowController extends BaseController implements Initializabl
                     messageRendererService.setEmailMessage(emailMessage);
                     messageRendererService.restart();
                 }
+                if (event.getClickCount() > 1) {
+                    viewFactory.showEmailDetailsWindow();
+                }
             }
         });
     }
@@ -145,6 +149,10 @@ public class MainWindowController extends BaseController implements Initializabl
         deleteMessageMenuItem.setOnAction(event -> {
             emailManager.deleteSelectedMessage();
             emailWebView.getEngine().loadContent("");
+        });
+
+        showMessageMenuItem.setOnAction(event -> {
+            viewFactory.showEmailDetailsWindow();
         });
     }
 
