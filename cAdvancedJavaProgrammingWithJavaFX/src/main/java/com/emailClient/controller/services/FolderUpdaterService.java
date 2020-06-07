@@ -21,7 +21,8 @@ public class FolderUpdaterService extends Service<Void> {
                 for (;;) {
                     try {
                         Thread.sleep(5000);
-                        for (Folder folder : folderList) {
+                        for (int i = 0; i < folderList.size(); i++) {
+                            Folder folder = folderList.get(i);
                             synchronized (folderList) {
                                 if ((folder.getType() != Folder.HOLDS_FOLDERS) && (folder.isOpen())) {
                                     folder.getMessageCount();
