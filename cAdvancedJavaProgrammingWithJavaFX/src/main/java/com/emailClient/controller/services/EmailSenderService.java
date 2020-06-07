@@ -4,10 +4,17 @@ import com.emailClient.controller.EmailSendingResult;
 import com.emailClient.model.EmailAccount;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmailSenderService extends Service<EmailSendingResult> {
 
@@ -15,12 +22,14 @@ public class EmailSenderService extends Service<EmailSendingResult> {
     private String subject;
     private String recipient;
     private String content;
+    private List<File> attachments;
 
-    public EmailSenderService(EmailAccount emailAccount, String subject, String recipient, String content) {
+    public EmailSenderService(EmailAccount emailAccount, String subject, String recipient, String content, List<File> attachments) {
         this.emailAccount = emailAccount;
         this.subject = subject;
         this.recipient = recipient;
         this.content = content;
+        this.attachments = attachments;
     }
 
 
@@ -30,21 +39,28 @@ public class EmailSenderService extends Service<EmailSendingResult> {
         return new Task<EmailSendingResult>() {
             @Override
             protected EmailSendingResult call() throws Exception {
-
                 try {
                     // Create the message
                     MimeMessage mimeMessage = new MimeMessage(emailAccount.getSession());
                     mimeMessage.setFrom(emailAccount.getAddress());
                     mimeMessage.addRecipients(Message.RecipientType.TO, recipient);
                     mimeMessage.setSubject(subject);
-
                     // Set the content
                     Multipart multipart = new MimeMultipart();
                     BodyPart messageBodyPart = new MimeBodyPart();
                     messageBodyPart.setContent(content, "text/html");
                     multipart.addBodyPart(messageBodyPart);
                     mimeMessage.setContent(multipart);
-
+                    // Adding attachments
+                    if (attachments.size() > 0) {
+                        for (File file : attachments) {
+                            MimeBodyPart mimeBodyPart = new MimeBodyPart();
+                            DataSource source = new FileDataSource(file.getAbsolutePath());
+                            mimeBodyPart.setDataHandler(new DataHandler(source));
+                            mimeBodyPart.setFileName(file.getName());
+                            multipart.addBodyPart(mimeBodyPart);
+                        }
+                    }
                     // Sending the message
                     Transport transport = emailAccount.getSession().getTransport();
                     transport.connect(
@@ -55,7 +71,6 @@ public class EmailSenderService extends Service<EmailSendingResult> {
                     transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
                     transport.close();
                     return EmailSendingResult.SUCCESS;
-
                 } catch (MessagingException e){
                     e.printStackTrace();
                     return EmailSendingResult.FAILED_BY_PROVIDER;
@@ -63,7 +78,6 @@ public class EmailSenderService extends Service<EmailSendingResult> {
                     e.printStackTrace();
                     return EmailSendingResult.FAILED_BY_UNEXPECTED_ERROR;
                 }
-
             }
         };
     }

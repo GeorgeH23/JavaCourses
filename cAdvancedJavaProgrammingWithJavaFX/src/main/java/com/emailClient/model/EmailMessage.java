@@ -66,11 +66,21 @@ public class EmailMessage {
 
     public void addAttachment(MimeBodyPart mbp) {
         hasAttachments = true;
-        attachmentList.add(mbp);
+        if (!attachmentList.contains(mbp)) {
+            attachmentList.add(mbp);
+        }
         try {
             System.out.println("Added attachment: " + mbp.getFileName());
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean hasAttachments() {
+        return hasAttachments;
+    }
+
+    public List<MimeBodyPart> getAttachmentList() {
+        return attachmentList;
     }
 }
