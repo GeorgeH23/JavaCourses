@@ -157,10 +157,10 @@ Slider .thumb{
 .menu-item .label:disabled {
     -fx-opacity: 1.0;
 }
-.menu-item:focused, .menu-item:hovered {
+.menu-item:focused, .menu-item:hover {
     -fx-background-color: -fx-my-background-color-color-alt;
 }
-.menu-item:focused .label, .menu-item:hovered .label {
+.menu-item:focused .label, .menu-item:hover .label {
     -fx-text-fill: -fx-my-font-color-highlighted;
 }
 .context-menu {

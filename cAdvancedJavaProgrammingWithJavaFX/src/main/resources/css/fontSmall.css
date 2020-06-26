@@ -45,6 +45,6 @@ Slider .axis {
 .menu-item .label {
     -fx-font-size: 9pt;
 }
-.menu-item:focused .label, .menu-item:hovered .label {
+.menu-item:focused .label, .menu-item:hover .label {
     -fx-font-size: 9pt;
 }

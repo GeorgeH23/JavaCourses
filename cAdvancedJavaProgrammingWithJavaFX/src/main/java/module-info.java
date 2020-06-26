@@ -7,7 +7,6 @@ module cAdvancedJavaProgrammingWithJavaFX {
     requires javafx.media;
     requires javafx.web;
     requires java.desktop;
-    requires javafx.swing;
     requires activation;
     requires java.mail;
 
